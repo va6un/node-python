@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>node python</title>
+  </head>
+  <body>
+    <h3>node python</h3>
+    <textarea name="" id="textarea" cols="60" rows="30"></textarea>
+    <div>
+      <button id="btn1">params</button>
+      <button id="btn2">countries</button>
+      <button id="btn3">picture array</button>
+    </div>
+    <script>
+      const btn1 = document.getElementById("btn1");
+      const btn2 = document.getElementById("btn2");
+      const btn3 = document.getElementById("btn3");
+      const response = document.getElementById("textarea");
+
+      btn1.addEventListener("click", async () => {
+        textarea.value = "";
+        const response = await fetch("/params");
+        const data = await response.json();
+        textarea.value = data;
+      });
+      btn2.addEventListener("click", async () => {
+        textarea.value = "";
+        const response = await fetch("/countries");
+        const data = await response.json();
+        textarea.value = data;
+      });
+      btn3.addEventListener("click", async () => {
+        textarea.value = "";
+        const response = await fetch("/picture_array");
+        const data = await response.json();
+        textarea.value = data;
+      });
+    </script>
+  </body>
+</html>
